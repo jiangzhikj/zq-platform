@@ -58,3 +58,7 @@ coverage
 ./backend-django/static/
 ./backend-django/.venv/
 ./backend-django/logs/
+*/migrations/
+
+./windsurf/rules
+/.windsurf/rules/web.md
