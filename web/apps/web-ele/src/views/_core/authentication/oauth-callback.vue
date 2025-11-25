@@ -20,7 +20,7 @@ onMounted(async () => {
     // 从路由参数获取 provider
     const provider = route.params.provider as OAuthApi.OAuthProvider;
     
-    if (!provider || !['gitee', 'github', 'qq', 'google', 'wechat', 'microsoft'].includes(provider)) {
+    if (!provider || !['gitee', 'github', 'qq', 'google', 'wechat', 'microsoft', 'dingtalk', 'feishu'].includes(provider)) {
       errorMessage.value = '不支持的 OAuth 提供商';
       loading.value = false;
       return;

@@ -56,6 +56,8 @@ export function getLoginTypeOptions() {
     { label: 'Google', value: 'google', type: 'success' },
     { label: '微信', value: 'wechat', type: 'success' },
     { label: '微软', value: 'microsoft', type: 'success' },
+    { label: '钉钉', value: 'dingtalk', type: 'success' },
+    { label: '飞书', value: 'feishu', type: 'success' },
   ];
 }
 

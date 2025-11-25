@@ -252,12 +252,32 @@ class User(RootModel):
         db_index=True,
     )
     
+    # 钉钉用户 ID
+    dingtalk_unionid = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+        unique=True,
+        help_text="钉钉 UnionID",
+        db_index=True,
+    )
+    
+    # 飞书用户 ID
+    feishu_union_id = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+        unique=True,
+        help_text="飞书 Union ID",
+        db_index=True,
+    )
+    
     # 最后登录方式
     last_login_type = models.CharField(
         max_length=20,
         null=True,
         blank=True,
-        help_text="最后登录方式 (password/code/qrcode/gitee/github/qq/google/wechat/microsoft)",
+        help_text="最后登录方式 (password/code/qrcode/gitee/github/qq/google/wechat/microsoft/dingtalk/feishu)",
         db_index=True,
     )
     

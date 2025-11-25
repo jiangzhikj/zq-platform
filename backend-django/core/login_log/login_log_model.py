@@ -51,6 +51,8 @@ class LoginLog(RootModel):
         ('google', 'Google OAuth'),
         ('wechat', '微信 OAuth'),
         ('microsoft', '微软 OAuth'),
+        ('dingtalk', '钉钉 OAuth'),
+        ('feishu', '飞书 OAuth'),
     ]
     
     # 用户ID

@@ -2,7 +2,7 @@ import { requestClient } from '#/api/request';
 
 export namespace OAuthApi {
   /** OAuth 提供商类型 */
-  export type OAuthProvider = 'gitee' | 'github' | 'qq' | 'google' | 'wechat' | 'microsoft';
+  export type OAuthProvider = 'gitee' | 'github' | 'qq' | 'google' | 'wechat' | 'microsoft' | 'dingtalk' | 'feishu';
 
   /** OAuth 回调参数 */
   export interface OAuthCallbackParams {
@@ -158,4 +158,36 @@ export async function microsoftOAuthCallbackApi(
   data: OAuthApi.OAuthCallbackParams,
 ) {
   return oauthCallbackApi('microsoft', data);
+}
+
+/**
+ * 获取钉钉授权 URL
+ */
+export async function getDingTalkAuthorizeUrlApi(state?: string) {
+  return getOAuthAuthorizeUrlApi('dingtalk', state);
+}
+
+/**
+ * 钉钉 OAuth 回调处理
+ */
+export async function dingtalkOAuthCallbackApi(
+  data: OAuthApi.OAuthCallbackParams,
+) {
+  return oauthCallbackApi('dingtalk', data);
+}
+
+/**
+ * 获取飞书授权 URL
+ */
+export async function getFeishuAuthorizeUrlApi(state?: string) {
+  return getOAuthAuthorizeUrlApi('feishu', state);
+}
+
+/**
+ * 飞书 OAuth 回调处理
+ */
+export async function feishuOAuthCallbackApi(
+  data: OAuthApi.OAuthCallbackParams,
+) {
+  return oauthCallbackApi('feishu', data);
 }

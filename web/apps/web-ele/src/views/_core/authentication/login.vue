@@ -10,6 +10,8 @@ import { $t } from '@vben/locales';
 import { ElMessage } from 'element-plus';
 
 import {
+  getDingTalkAuthorizeUrlApi,
+  getFeishuAuthorizeUrlApi,
   getGiteeAuthorizeUrlApi,
   getGitHubAuthorizeUrlApi,
   getGoogleAuthorizeUrlApi,
@@ -196,6 +198,38 @@ async function handleMicrosoftLogin() {
     ElMessage.error('微软登录失败，请稍后重试');
   }
 }
+
+// 钉钉 OAuth 登录
+async function handleDingTalkLogin() {
+  try {
+    const data = await getDingTalkAuthorizeUrlApi();
+    if (data?.authorize_url) {
+      // 重定向到钉钉授权页面
+      window.location.href = data.authorize_url;
+    } else {
+      ElMessage.error('获取授权链接失败');
+    }
+  } catch (error) {
+    console.error('钉钉登录失败:', error);
+    ElMessage.error('钉钉登录失败，请稍后重试');
+  }
+}
+
+// 飞书 OAuth 登录
+async function handleFeishuLogin() {
+  try {
+    const data = await getFeishuAuthorizeUrlApi();
+    if (data?.authorize_url) {
+      // 重定向到飞书授权页面
+      window.location.href = data.authorize_url;
+    } else {
+      ElMessage.error('获取授权链接失败');
+    }
+  } catch (error) {
+    console.error('飞书登录失败:', error);
+    ElMessage.error('飞书登录失败，请稍后重试');
+  }
+}
 </script>
 
 <template>
@@ -223,7 +257,7 @@ async function handleMicrosoftLogin() {
           <!-- Gitee 登录按钮 -->
           <button
             type="button"
-            class="hover:bg-accent hover:text-accent-foreground hover:border-destructive/50 border-input bg-background text-muted-foreground dark:hover:border-destructive/50 flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
+            class="hover:bg-accent hover:text-accent-foreground hover:border-destructive/50 border-input bg-background text-muted-foreground dark:hover:border-destructive/50 flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
             @click="handleGiteeLogin"
           >
             <svg
@@ -242,7 +276,7 @@ async function handleMicrosoftLogin() {
           <!-- GitHub 登录按钮 -->
           <button
             type="button"
-            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
+            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
             @click="handleGitHubLogin"
           >
             <svg
@@ -259,30 +293,30 @@ async function handleMicrosoftLogin() {
           </button>
 
           <!-- QQ 登录按钮 -->
-          <button
-            type="button"
-            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
-            @click="handleQQLogin"
-          >
-            <svg
-              class="size-4 shrink-0"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z"
-                fill="#12B7F5"
-              />
-            </svg>
-            <span>QQ</span>
-          </button>
+<!--          <button-->
+<!--            type="button"-->
+<!--            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"-->
+<!--            @click="handleQQLogin"-->
+<!--          >-->
+<!--            <svg-->
+<!--              class="size-4 shrink-0"-->
+<!--              viewBox="0 0 1024 1024"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z"-->
+<!--                fill="#12B7F5"-->
+<!--              />-->
+<!--            </svg>-->
+<!--            <span>QQ</span>-->
+<!--          </button>-->
 <!--        </div>-->
 
 <!--        <div class="mt-4 flex justify-center gap-3">-->
           <!-- Google 登录按钮 -->
           <button
             type="button"
-            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
+            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
             @click="handleGoogleLogin"
           >
             <svg
@@ -313,7 +347,7 @@ async function handleMicrosoftLogin() {
           <!-- 微信登录按钮 -->
 <!--          <button-->
 <!--            type="button"-->
-<!--            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"-->
+<!--            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"-->
 <!--            @click="handleWeChatLogin"-->
 <!--          >-->
 <!--            <svg-->
@@ -332,7 +366,7 @@ async function handleMicrosoftLogin() {
           <!-- 微软登录按钮 -->
           <button
             type="button"
-            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
+            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"
             @click="handleMicrosoftLogin"
           >
             <svg
@@ -365,6 +399,48 @@ async function handleMicrosoftLogin() {
             </svg>
             <span>Microsoft</span>
           </button>
+
+          <!-- 钉钉登录按钮 -->
+<!--          <button-->
+<!--            type="button"-->
+<!--            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"-->
+<!--            @click="handleDingTalkLogin"-->
+<!--          >-->
+<!--            <svg-->
+<!--              class="size-4 shrink-0"-->
+<!--              viewBox="0 0 1024 1024"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m244.5 558.4l-106.1-17s87.5-98.1 34.1-184.8c-53.4-86.7-151.5-51.4-151.5-51.4s-100.1 34.1-132.2 134.2c-32.1 100.1 34.1 184.8 34.1 184.8l-106.1 17s-17-68.2 17-151.5c34.1-83.3 100.1-132.2 100.1-132.2s-17-34.1-51.4-34.1c-34.1 0-68.2 17-68.2 17s-17-51.4 17-100.1c34.1-48.7 100.1-68.2 100.1-68.2s184.8-34.1 285 100.1c100.1 134.2 28.1 285.2 28.1 285.2z"-->
+<!--                fill="#0089FF"-->
+<!--              />-->
+<!--            </svg>-->
+<!--            <span>钉钉</span>-->
+<!--          </button>-->
+
+          <!-- 飞书登录按钮 -->
+<!--          <button-->
+<!--            type="button"-->
+<!--            class="hover:bg-accent hover:text-accent-foreground border-input bg-background text-muted-foreground flex cursor-pointer items-center justify-center gap-1 rounded-lg border px-5 py-2 text-sm shadow-sm transition-all duration-300 hover:shadow-md"-->
+<!--            @click="handleFeishuLogin"-->
+<!--          >-->
+<!--            <svg-->
+<!--              class="size-4 shrink-0"-->
+<!--              viewBox="0 0 1024 1024"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m213.3 512H298.7c-17.7 0-32-14.3-32-32V298.7c0-17.7 14.3-32 32-32h426.6c17.7 0 32 14.3 32 32V544c0 17.7-14.3 32-32 32z"-->
+<!--                fill="#00D6B9"-->
+<!--              />-->
+<!--              <path-->
+<!--                d="M426.7 469.3h170.6c17.7 0 32 14.3 32 32v42.7c0 17.7-14.3 32-32 32H426.7c-17.7 0-32-14.3-32-32v-42.7c0-17.7 14.3-32 32-32z"-->
+<!--                fill="#FFFFFF"-->
+<!--              />-->
+<!--            </svg>-->
+<!--            <span>飞书</span>-->
+<!--          </button>-->
         </div>
       </div>
     </template>

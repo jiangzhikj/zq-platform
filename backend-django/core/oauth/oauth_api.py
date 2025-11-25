@@ -10,7 +10,10 @@ from ninja.errors import HttpError
 from django.http import HttpRequest
 
 from .oauth_schema import OAuthCallbackSchema, OAuthLoginResponseSchema
-from .oauth_service import GiteeOAuthService, GitHubOAuthService, QQOAuthService, GoogleOAuthService, WeChatOAuthService, MicrosoftOAuthService
+from .oauth_service import (
+    GiteeOAuthService, GitHubOAuthService, QQOAuthService, GoogleOAuthService,
+    WeChatOAuthService, MicrosoftOAuthService, DingTalkOAuthService, FeishuOAuthService
+)
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +27,8 @@ OAUTH_PROVIDERS = {
     'google': GoogleOAuthService,
     'wechat': WeChatOAuthService,
     'microsoft': MicrosoftOAuthService,
+    'dingtalk': DingTalkOAuthService,
+    'feishu': FeishuOAuthService,
 }
 
 
