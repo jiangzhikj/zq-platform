@@ -5,13 +5,13 @@ import os
 
 DATABASE_TYPE = "POSTGRESQL"
 # 数据库地址
-DATABASE_HOST = "django-ninja.zq-platform.cn"
+DATABASE_HOST = ""
 # 数据库端口
 DATABASE_PORT = 5323
 # 数据库用户名
 DATABASE_USER = os.environ.get('DEV_DB_USER', "zq-admin")
 # 数据库密码
-DATABASE_PASSWORD = os.environ.get('DEV_DB_PASSWORD', "MnjKEKdRM3E8cryh")
+DATABASE_PASSWORD = os.environ.get('DEV_DB_PASSWORD', "")
 # 数据库名
 DATABASE_NAME = "zq-admin"
 
@@ -83,13 +83,3 @@ WECHAT_REDIRECT_URI = os.environ.get('WECHAT_REDIRECT_URI', 'http://localhost:57
 MICROSOFT_CLIENT_ID = os.environ.get('MICROSOFT_CLIENT_ID', 'your-microsoft-client-id')
 MICROSOFT_CLIENT_SECRET = os.environ.get('MICROSOFT_CLIENT_SECRET', 'your-microsoft-client-secret')
 MICROSOFT_REDIRECT_URI = os.environ.get('MICROSOFT_REDIRECT_URI', 'http://localhost:5777/oauth/microsoft/callback')
-
-# 钉钉 OAuth
-DINGTALK_APP_ID = os.environ.get('DINGTALK_APP_ID', 'your-dingtalk-app-id')
-DINGTALK_APP_SECRET = os.environ.get('DINGTALK_APP_SECRET', 'your-dingtalk-app-secret')
-DINGTALK_REDIRECT_URI = os.environ.get('DINGTALK_REDIRECT_URI', 'http://localhost:5777/oauth/dingtalk/callback')
-
-# 飞书 OAuth
-FEISHU_APP_ID = os.environ.get('FEISHU_APP_ID', 'your-feishu-app-id')
-FEISHU_APP_SECRET = os.environ.get('FEISHU_APP_SECRET', 'your-feishu-app-secret')
-FEISHU_REDIRECT_URI = os.environ.get('FEISHU_REDIRECT_URI', 'http://localhost:5777/oauth/feishu/callback')
