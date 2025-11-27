@@ -1,12 +1,20 @@
 ## 运行教程
 ### 克隆项目
 ```bash
-git clone https://gitee.com/fuadmin/fu-admin.git
+git clone https://github.com/jiangzhikj/zq-platform
 # 进入项目目录
-cd fu-admin/backend
+cd zq-platform/backend-django
 ```
 
-### 在 `config/env.py` 中配置数据库信息
+### 创建虚拟环境
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或
+venv\Scripts\activate     # Windows
+```
+
+### 在 `env/dev_env.py` 中配置数据库信息
 ```bash
 # 默认是Postgres SQL
 # 数据库类型 MYSQL/SQLSERVER/SQLITE3/POSTGRESQL
@@ -20,7 +28,7 @@ DATABASE_USER = "fuadmin"
 # 数据库密码
 DATABASE_PASSWORD = "fuadmin"
 # 数据库名
-DATABASE_NAME = "fu-admin-pro"
+DATABASE_NAME = "fu_admin_pro"
 ```
 
 ### 安装依赖环境
@@ -30,7 +38,7 @@ pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple -r requireme
 
 ### 执行迁移命令
 ```bash
-python manage.py makemigrations system
+python manage.py makemigrations core scheduler
 ```
 ```bash
 python manage.py migrate
@@ -44,6 +52,13 @@ python manage.py loaddata db_init.json
 python manage.py runserver 0.0.0.0:8000
 ```
 
+### 启动任务调度器（可选）
 ```bash
-python manage.py dumpdata system --indent 4 > db_init.json
+# 生产环境
+python start_scheduler.py
+```
+
+### 备份数据（可选）
+```bash
+python manage.py dumpdata core scheduler --indent 4 > db_init.json
 ```

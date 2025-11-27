@@ -42,7 +42,7 @@ coverage
 
 # Editor directories and files
 .idea
-# .vscode
+.vscode
 *.suo
 *.ntvs*
 *.njsproj
@@ -54,6 +54,7 @@ coverage
 
 
 ./backend-django/venv
+__pycache__
 ./backend-django/.idea/
 ./backend-django/static/
 ./backend-django/.venv/
