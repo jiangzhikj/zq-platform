@@ -64,3 +64,13 @@ coverage
 /.windsurf/rules/web.md
 /docs/
 */*.md/
+
+# Docker deployment files (local only)
+docker-compose.yml
+backend-django/Dockerfile
+backend-django/docker-entrypoint.sh
+backend-django/env/docker_env.py
+nginx/
+web/Dockerfile
+web/apps/web-ele/.env.docker
+DOCKER_DEPLOY.md

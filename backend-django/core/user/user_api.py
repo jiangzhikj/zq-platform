@@ -417,7 +417,7 @@ def search_user(request, keyword: str = Query(None)):
     return query_set
 
 
-@router.put("/user/profile", response=UserSchemaOut, summary="更新个人信息（完全替换）")
+@router.put("/profile", response=UserSchemaOut, summary="更新个人信息（完全替换）")
 def update_profile(request, data: UserProfileUpdateIn):
     """
     用户更新自己的个人信息（PUT - 完全替换）
@@ -437,7 +437,7 @@ def update_profile(request, data: UserProfileUpdateIn):
     return user
 
 
-@router.patch("/user/profile", response=UserSchemaOut, summary="部分更新个人信息")
+@router.patch("/profile", response=UserSchemaOut, summary="部分更新个人信息")
 def patch_profile(request, data: UserProfileUpdateIn):
     """
     用户部分更新自己的个人信息（PATCH - 只更新提供的字段）
@@ -451,7 +451,12 @@ def patch_profile(request, data: UserProfileUpdateIn):
     - 有限的字段可以修改
     """
     current_user = request.auth
-    user = get_object_or_404(User, id=current_user.id)
+    
+    # 如果 request.auth 已经是 User 对象，直接使用（避免重复查询）
+    if isinstance(current_user, User):
+        user = current_user
+    else:
+        user = get_object_or_404(User, id=current_user.id)
     
     # 只更新提供的字段
     update_data = data.dict(exclude_unset=True)
@@ -463,7 +468,7 @@ def patch_profile(request, data: UserProfileUpdateIn):
     return user
 
 
-@router.get("/user/profile/me", response=UserSchemaDetail, summary="获取当前用户信息")
+@router.get("/profile/me", response=UserSchemaDetail, summary="获取当前用户信息")
 def get_current_user_profile(request):
     """
     获取当前登录用户的详细信息

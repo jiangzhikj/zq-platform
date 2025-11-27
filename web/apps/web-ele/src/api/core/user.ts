@@ -192,7 +192,7 @@ export async function resetUserPasswordApi(
  * 更新用户个人信息
  */
 export async function updateUserProfileApi(data: UserProfileUpdateInput) {
-  return requestClient.put<User>('/api/core/user/profile', data);
+  return requestClient.put<User>('/api/core/profile', data);
 }
 
 /**
@@ -223,14 +223,14 @@ export async function getSimpleUserListApi() {
  * 获取当前用户个人信息
  */
 export async function getCurrentUserProfileApi() {
-  return requestClient.get<User>('/api/core/user/profile/me');
+  return requestClient.get<User>('/api/core/profile/me');
 }
 
 /**
  * 部分更新用户个人信息
  */
 export async function patchUserProfileApi(data: UserProfileUpdateInput) {
-  return requestClient.patch<User>('/api/core/user/profile', data);
+  return requestClient.patch<User>('/api/core/profile', data);
 }
 
 /**
