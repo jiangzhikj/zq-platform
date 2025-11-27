@@ -140,6 +140,17 @@ class RequestClient {
   }
 
   /**
+   * PATCH请求方法
+   */
+  public patch<T = any>(
+    url: string,
+    data?: any,
+    config?: RequestClientConfig,
+  ): Promise<T> {
+    return this.request<T>(url, { ...config, data, method: 'PATCH' });
+  }
+
+  /**
    * 通用的请求方法
    */
   public async request<T>(

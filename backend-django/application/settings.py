@@ -37,6 +37,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'channels',  # WebSocket支持
+    'django_celery_results',  # Celery 结果存储
+    'django_celery_beat',  # Celery 定时任务
     'core',
     'scheduler',
 ]
@@ -54,6 +56,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'application.urls'
 AUTH_USER_MODEL = 'core.User'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+            ],
+        },
+    },
+]
 
 WSGI_APPLICATION = 'application.wsgi.application'
 
