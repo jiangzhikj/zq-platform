@@ -21,7 +21,8 @@ DATABASE_NAME = "zq-admin"
 REDIS_PASSWORD = JWT_ACCESS_SECRET_KEY = os.environ.get('REDIS_PASSWORD', '')
 REDIS_HOST = '172.18.0.4'
 REDIS_DB = '4'
-REDIS_URL = f'redis://:{REDIS_PASSWORD or ""}@{REDIS_HOST}:6379'
+REDIS_PORT = 6379
+REDIS_URL = f'redis://:{REDIS_PASSWORD or ""}@{REDIS_HOST}:{REDIS_PORT}'
 
 
 # # ================================================= #
