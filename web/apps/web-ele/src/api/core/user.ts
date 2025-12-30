@@ -180,11 +180,9 @@ export async function batchUpdateUserStatusApi(
  */
 export async function resetUserPasswordApi(
   userId: string,
-  data: UserPasswordResetInput,
 ) {
-  return requestClient.post<User>(
-    `/api/core/user/reset/password/${userId}`,
-    data,
+  return requestClient.put<User>(
+    `/api/core/user/reset/password/${userId}`
   );
 }
 

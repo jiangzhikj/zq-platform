@@ -148,10 +148,7 @@ function onResetPassword(row: User) {
   )
     .then(async () => {
       try {
-        await resetUserPasswordApi(row.id, {
-          new_password: 'admin123',
-          confirm_password: 'admin123',
-        });
+        await resetUserPasswordApi(row.id);
         ElMessage.success($t('user.resetPasswordSuccess', [row.name]));
       } catch {
         ElMessage.error($t('user.resetPasswordError'));
