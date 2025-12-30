@@ -47,7 +47,7 @@
   "deleteError": "Failed to delete user",
   "cannotResetAdminPassword": "Cannot reset administrator password",
   "resetPasswordTitle": "Reset Password",
-  "resetPasswordConfirm": "Are you sure to reset password for user \"{0}\"?\nThe password will be reset to: admin123",
+  "resetPasswordConfirm": "Are you sure to reset password for user \"{0}\"?\nThe password will be reset to: 123456",
   "resetPasswordSuccess": "Password reset successfully for user \"{0}\"",
   "resetPasswordError": "Failed to reset password",
   "accountSettings": "Account Settings",

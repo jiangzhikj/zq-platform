@@ -47,7 +47,7 @@
   "deleteError": "删除用户失败",
   "cannotResetAdminPassword": "不能重置管理员密码",
   "resetPasswordTitle": "重置密码",
-  "resetPasswordConfirm": "确定要重置用户{0}的密码吗？\n密码将重置为：admin123",
+  "resetPasswordConfirm": "确定要重置用户{0}的密码吗？\n密码将重置为：123456",
   "resetPasswordSuccess": "用户{0}的密码重置成功",
   "resetPasswordError": "重置密码失败",
   "accountSettings": "账号设置",

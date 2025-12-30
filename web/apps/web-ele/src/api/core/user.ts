@@ -183,7 +183,7 @@ export async function resetUserPasswordApi(
   data: UserPasswordResetInput,
 ) {
   return requestClient.post<User>(
-    `/api/core/user/${userId}/reset_password`,
+    `/api/core/user/reset/password/${userId}`,
     data,
   );
 }
