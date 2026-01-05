@@ -25,6 +25,8 @@ from application import settings
 from application.settings import API_WHITE_LIST
 from env import IS_DEMO
 
+from django.urls import resolve, Resolver404
+
 logger = logging.getLogger(__name__)
 
 
@@ -166,20 +168,40 @@ def is_in_white_list(path: str, white_apis: list) -> bool:
     return False
 
 
-def normalize_api_path(path: str) -> str:
-    """
-    标准化 API 路径，将 UUID 替换为 :id
+# def normalize_api_path(path: str) -> str:
+#     """
+#     标准化 API 路径，将 UUID 替换为 :id
     
-    例如:
-        /api/core/user/123e4567-e89b-12d3-a456-426614174000 -> /api/core/user/:id
-        /api/core/dept/abc123def/users -> /api/core/dept/:id/users
-    """
-    # UUID 正则表达式
-    uuid_pattern = r'[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
-    # 替换 UUID 为 :id
-    normalized_path = re.sub(uuid_pattern, ':id', path)
-    return normalized_path
+#     例如:
+#         /api/core/user/123e4567-e89b-12d3-a456-426614174000 -> /api/core/user/:id
+#         /api/core/dept/abc123def/users -> /api/core/dept/:id/users
+#     """
+#     # UUID 正则表达式
+#     uuid_pattern = r'[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+#     # 替换 UUID 为 :id
+#     normalized_path = re.sub(uuid_pattern, ':id', path)
+#     return normalized_path
 
+def get_db_style_route(path: str) -> str:
+    """
+    将请求路径解析为数据库存储的模式
+    例如: /api/problem/550e... -> /api/problem/{problem_id}
+    """
+    try:
+        match = resolve(path)
+        route = match.route  # 得到 'api/problem/<uuid:problem_id>'
+        
+        # 使用正则将 <type:name> 或 <name> 转换为 {name}
+        # 匹配 <(类型:)?名称>
+        db_route = re.sub(r'<(?:[^:>]+:)?([^>]+)>', r'{\1}', route)
+        
+        # 确保以 / 开头
+        if not db_route.startswith('/'):
+            db_route = '/' + db_route
+        return db_route
+    except Resolver404:
+        # 如果路径不在 urls.py 中，返回原始路径或进行基础清洗
+        return path
 
 class ApiKey(APIKeyQuery):
     """API Key 认证（用于特殊场景，如文件流）"""
@@ -267,6 +289,68 @@ class BearerAuth(HttpBearer):
             logger.error(f"认证失败: {str(e)}", exc_info=True)
             raise HttpError(401, "认证失败")
 
+    # def _check_permission(self, user, path: str, method: str) -> bool:
+    #     """
+    #     检查用户是否有权限访问指定的 API
+        
+    #     :param user: 用户对象
+    #     :param path: API 路径
+    #     :param method: HTTP 方法
+    #     :return: True 如果有权限，否则 False
+    #     """
+    #     try:
+    #         # 标准化路径（将 UUID 替换为 :id）
+    #         normalized_path = normalize_api_path(path)
+
+    #         # 获取 HTTP 方法对应的数字
+    #         method_code = HTTP_METHOD_MAP.get(method)
+    #         if method_code is None:
+    #             logger.warning(f"不支持的 HTTP 方法: {method}")
+    #             return False
+
+    #         # 使用缓存提高性能（包含版本号）
+    #         from common.fu_cache import PermissionCacheManager
+    #         version_key = PermissionCacheManager.get_cache_version_key(user.id)
+    #         cache_key = f"user_permission:{user.id}:{version_key}:{normalized_path}:{method}"
+    #         cached_result = cache.get(cache_key)
+    #         if cached_result is not None:
+    #             logger.debug(f"命中权限缓存: {cache_key}")
+    #             return cached_result
+
+    #         # 从 Core 模块导入 Permission 模型
+    #         from core.permission.permission_model import Permission
+
+    #         # 获取用户所有角色的权限
+    #         # user.core_roles 是 ManyToMany 关系
+    #         role_ids = list(user.core_roles.filter(status=True).values_list('id', flat=True))
+
+    #         if not role_ids:
+    #             logger.debug(f"用户 {user.username} 没有关联任何启用的角色")
+    #             cache.set(cache_key, False, 300)  # 缓存5分钟
+    #             return False
+
+    #         # 查询权限
+    #         # Role.permission 是 ManyToMany 关系，关联到 Permission
+    #         # Permission 有 api_path 和 http_method 字段
+    #         has_permission = Permission.objects.filter(
+    #             roles__id__in=role_ids,  # 通过角色反向查询权限
+    #             api_path=normalized_path,
+    #             http_method__in=[method_code, 5],  # 5 表示 ALL (所有方法)
+    #             is_active=True,
+    #         ).exists()
+
+    #         # 缓存结果（5分钟）
+    #         cache.set(cache_key, has_permission, 300)
+
+    #         if has_permission:
+    #             logger.debug(f"用户 {user.username} 有权限访问: {method} {normalized_path}")
+
+    #         return has_permission
+
+    #     except Exception as e:
+    #         logger.error(f"权限检查失败: {str(e)}", exc_info=True)
+    #         return False
+
     def _check_permission(self, user, path: str, method: str) -> bool:
         """
         检查用户是否有权限访问指定的 API
@@ -277,58 +361,47 @@ class BearerAuth(HttpBearer):
         :return: True 如果有权限，否则 False
         """
         try:
-            # 标准化路径（将 UUID 替换为 :id）
-            normalized_path = normalize_api_path(path)
-
-            # 获取 HTTP 方法对应的数字
+            # 1. 获取数据库风格的路径模式 (例如: /api/problem/{problem_id})
+            # 注意：传入的是原始 path，不能是已经替换过 :id 的路径
+            db_route_path = get_db_style_route(path)
+            
+            # 2. 获取 HTTP 方法代码
             method_code = HTTP_METHOD_MAP.get(method)
             if method_code is None:
-                logger.warning(f"不支持的 HTTP 方法: {method}")
                 return False
 
-            # 使用缓存提高性能（包含版本号）
+            # 3. 缓存逻辑
             from common.fu_cache import PermissionCacheManager
             version_key = PermissionCacheManager.get_cache_version_key(user.id)
-            cache_key = f"user_permission:{user.id}:{version_key}:{normalized_path}:{method}"
+            # 注意：缓存 key 建议使用转换后的路径
+            cache_key = f"user_perm:{user.id}:{version_key}:{db_route_path}:{method}"
             cached_result = cache.get(cache_key)
             if cached_result is not None:
-                logger.debug(f"命中权限缓存: {cache_key}")
                 return cached_result
 
-            # 从 Core 模块导入 Permission 模型
-            from core.permission.permission_model import Permission
-
-            # 获取用户所有角色的权限
-            # user.core_roles 是 ManyToMany 关系
+            # 4. 获取角色 IDs
             role_ids = list(user.core_roles.filter(status=True).values_list('id', flat=True))
-
             if not role_ids:
-                logger.debug(f"用户 {user.username} 没有关联任何启用的角色")
-                cache.set(cache_key, False, 300)  # 缓存5分钟
                 return False
 
-            # 查询权限
-            # Role.permission 是 ManyToMany 关系，关联到 Permission
-            # Permission 有 api_path 和 http_method 字段
+            # 5. 从数据库查询
+            from core.permission.permission_model import Permission
+            
+            # 直接匹配转换后的路径
             has_permission = Permission.objects.filter(
-                roles__id__in=role_ids,  # 通过角色反向查询权限
-                api_path=normalized_path,
-                http_method__in=[method_code, 5],  # 5 表示 ALL (所有方法)
+                roles__id__in=role_ids,
+                api_path=db_route_path,  # 此时匹配的是 /api/problem/{problem_id}
+                http_method__in=[method_code, 5],
                 is_active=True,
             ).exists()
 
-            # 缓存结果（5分钟）
+            # 6. 设置缓存并返回
             cache.set(cache_key, has_permission, 300)
-
-            if has_permission:
-                logger.debug(f"用户 {user.username} 有权限访问: {method} {normalized_path}")
-
             return has_permission
 
         except Exception as e:
             logger.error(f"权限检查失败: {str(e)}", exc_info=True)
             return False
-
 
 def create_token(data: dict):
     """
