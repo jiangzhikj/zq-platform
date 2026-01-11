@@ -106,7 +106,8 @@
       "dataTable": "數據表格",
       "iframe": "iframe 嵌入",
       "videoPlayer": "視頻播放器",
-      "image": "圖片"
+      "image": "圖片",
+      "formRender": "表單渲染"
     },
     "defaultProps": {
       "statTitle": "統計數據",
@@ -164,7 +165,8 @@
       "externalPage": "外部頁面",
       "itemName": "項目",
       "imageTitle": "圖片",
-      "myDashboard": "我的儀表板"
+      "myDashboard": "我的儀表盤",
+      "formRender": "表單數據"
     }
   },
   "attribute": {
@@ -414,6 +416,7 @@
         "newItem": "新成員"
       },
       "quickLinks": {
+        "title": "快捷入口",
         "tip": "點擊格子選擇菜單，圖標自動使用菜單配置",
         "iconColorDefault": "默認主題色",
         "selectMenu": "選擇菜單"
@@ -487,6 +490,47 @@
         "stripe": "斑馬紋",
         "border": "邊框",
         "showIndex": "顯示序號",
+        "showHeader": "顯示表頭",
+        "highlightCurrentRow": "高亮當前行",
+        "alignment": "對齊方式",
+        "headerAlign": "表頭對齊",
+        "cellAlign": "單元格對齊",
+        "heightConfig": "高度配置",
+        "height": "固定高度",
+        "heightPlaceholder": "如：300px 或 100%",
+        "heightTip": "支持像素值或百分比",
+        "maxHeight": "最大高度",
+        "maxHeightPlaceholder": "如：500",
+        "maxHeightTip": "超出後顯示滾動條",
+        "customization": "自定義",
+        "emptyText": "空數據提示",
+        "emptyTextPlaceholder": "暫無數據",
+        "headerBgColor": "表頭背景色",
+        "summaryConfig": "統計配置",
+        "showSummary": "顯示表尾統計",
+        "summaryType": "統計類型",
+        "summaryTypes": {
+          "sum": "合計",
+          "avg": "平均值",
+          "count": "計數",
+          "max": "最大值",
+          "min": "最小值"
+        },
+        "summaryPrecision": "小數位數",
+        "summaryColumns": "統計列",
+        "noColumnsConfigured": "請先配置表格列",
+        "mergeConfig": "合併配置",
+        "enableMerge": "啟用合併",
+        "mergeRules": "合併規則",
+        "mergeTypes": {
+          "row": "行合併",
+          "column": "列合併"
+        },
+        "selectMergeField": "選擇合併字段",
+        "rowIndex": "行號",
+        "startCol": "起始列",
+        "colspan": "合併列數",
+        "addMergeRule": "添加合併規則",
         "size": "尺寸",
         "sizeOptions": {
           "default": "默認",
@@ -517,6 +561,7 @@
         "selectFromFileLib": "從文件庫選擇"
       },
       "image": {
+        "title": "圖片",
         "config": "圖片設置",
         "alt": "替代文本",
         "altPlaceholder": "圖片無法顯示時的替代文本",
@@ -542,11 +587,29 @@
       },
       "common": {
         "staticDataTip": "當前組件使用靜態數據，可在基礎配置中修改"
+      },
+      "formRender": {
+        "formConfig": "表單配置",
+        "formCode": "選擇表單",
+        "formCodePlaceholder": "請選擇表單",
+        "containerType": "容器類型",
+        "drawer": "抽屜",
+        "dialog": "彈窗",
+        "displayConfig": "顯示配置",
+        "showToolbar": "顯示工具欄",
+        "showPagination": "顯示分頁",
+        "pageSize": "每頁條數",
+        "buttonConfig": "按鈕配置",
+        "showAdd": "新增按鈕",
+        "showView": "查看按鈕",
+        "showEdit": "編輯按鈕",
+        "showDelete": "刪除按鈕"
       }
     },
     "fieldLabels": {
       "title": "標題",
       "value": "數值",
+      "time": "時間",
       "trend": "趨勢百分比",
       "trendLabel": "趨勢說明",
       "prefix": "前綴",
@@ -633,7 +696,22 @@
         "success": "成功",
         "failed": "失敗",
         "processing": "進行中"
+      },
+      "summary": {
+        "sum": "合計",
+        "avg": "平均",
+        "count": "計數",
+        "max": "最大",
+        "min": "最小"
       }
+    },
+    "formRender": {
+      "placeholder": "表單渲染組件",
+      "noFormCode": "請配置表單編碼",
+      "deleteConfirm": "確定要刪除這條數據嗎？",
+      "batchDeleteConfirm": "確定要刪除選中的 {count} 條數據嗎？",
+      "importResult": "成功導入 {success} 條，失敗 {failed} 條",
+      "view": "查看"
     },
     "welcome": {
       "greeting": {

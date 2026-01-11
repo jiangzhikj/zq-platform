@@ -1,17 +1,9 @@
 {
   "title": "系統管理",
   "tool": "系統工具",
-  "role": {
-    "name": "角色",
-    "roleName": "角色名稱",
-    "roleCode": "角色編碼",
-    "status": "狀態",
-    "remark": "備註"
-  },
   "user": {
-    "userName": "使用者名稱",
-    "account": "帳號",
-    "email": "電子郵件",
-    "operation": "操作"
+    "selectPost": "選擇崗位",
+    "selectDept": "選擇部門",
+    "allDept": "全部部門"
   }
 }

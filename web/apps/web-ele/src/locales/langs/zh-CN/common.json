@@ -16,11 +16,13 @@
   "disabled": "禁用",
   "selected": "已选择",
   "noData": "暂无数据",
-  "loading": "加载中...",
+  "loading": "加载中",
+  "loadMore": "加载更多",
   "noMore": "没有更多数据了",
   "tips": "提示",
   "search": "搜索",
   "clear": "清空",
+  "replace": "替换",
   "copy": "复制",
   "format": "格式化",
   "compress": "压缩",
@@ -46,7 +48,8 @@
   },
   "ui": {
     "placeholder": {
-      "select": "请选择",
+      "select": "选择",
+      "selectAll": "全选",
       "search": "请输入搜索内容"
     },
     "actionTitle": {
@@ -57,13 +60,13 @@
       "delete": "删除{0}"
     },
     "actionMessage": {
-      "createSuccess": "创建{0}成功",
-      "createError": "创建{0}失败",
-      "updateSuccess": "更新{0}成功",
-      "updateError": "更新{0}失败",
-      "deleteSuccess": "删除{0}成功",
+      "createSuccess": "创建成功",
+      "createError": "创建失败",
+      "updateSuccess": "更新成功",
+      "updateError": "更新失败",
+      "deleteSuccess": "删除成功",
       "deleteConfirm": "确定要删除 {0} 吗？",
-      "deleteError": "删除{0}失败",
+      "deleteError": "删除失败",
       "loadError": "加载失败"
     },
     "submit": "提交",
@@ -79,5 +82,22 @@
   "yes": "是",
   "no": "否",
   "male": "男",
-  "female": "女"
+  "female": "女",
+  "fullscreen": "全屏",
+  "exitFullscreen": "退出全屏",
+  "setting": "设置",
+  "columnSetting": "列设置",
+  "sort": "排序",
+  "batchDelete": "批量删除",
+  "export": "导出",
+  "import": "导入",
+  "downloadTemplate": "下载模板",
+  "view": "查看",
+  "summarySum": "合计",
+  "summaryAvg": "平均",
+  "summaryCount": "计数",
+  "summaryMax": "最大",
+  "summaryMin": "最小",
+  "startDate": "开始日期",
+  "endDate": "结束日期"
 }

@@ -52,5 +52,70 @@
       "data": "數據權限",
       "other": "其他權限"
     }
+  },
+  "resourceScope": {
+    "title": "數據權限配置",
+    "helpTip": "必須後端實現了相關的方法後才生效，參考 zq-demo",
+    "addResource": "添加資源",
+    "saveConfig": "保存配置",
+    "deleteConfirm": "確定刪除此配置嗎？",
+    "selectRole": "請先選擇角色",
+    "noConfig": "暫無配置，點擊【添加資源】開始配置",
+    "resourceType": "資源類型",
+    "selectResourceType": "選擇資源類型",
+    "dataPermission": "數據權限範圍",
+    "selectDataPermission": "選擇數據權限",
+    "customDept": "自定義部門",
+    "selectDept": "選擇部門",
+    "operation": "操作",
+    "delete": "刪除",
+    "saveSuccess": "資源數據權限配置保存成功",
+    "saveFailed": "保存資源數據權限配置失敗",
+    "loadFailed": "加載資源數據權限配置失敗",
+    "loadResourceTypesFailed": "加載資源類型失敗",
+    "loadDeptsFailed": "加載部門列表失敗",
+    "allTypesConfigured": "所有資源類型都已配置",
+    "customDeptRequired": "自定義數據權限必須選擇部門"
+  },
+  "fieldPermission": {
+    "title": "字段權限配置",
+    "helpTip": "必須後端實現了相關的方法後才生效，參考 zq-demo",
+    "config": "配置",
+    "resourceType": "資源類型",
+    "selectResourceType": "選擇資源類型",
+    "selectRoleFirst": "請先選擇角色",
+    "selectRoleAndResource": "請先選擇角色和資源類型",
+    "fieldName": "字段名",
+    "displayName": "顯示名稱",
+    "sensitive": "敏感",
+    "permissionType": "權限類型",
+    "maskRule": "脫敏規則",
+    "description": "說明",
+    "noConfig": "暫無字段配置",
+    "saveConfig": "保存配置",
+    "saveSuccess": "字段權限配置保存成功",
+    "saveFailed": "保存字段權限配置失敗",
+    "loadFailed": "加載字段權限配置失敗",
+    "loadMetadataFailed": "加載資源字段元數據失敗",
+    "maskRuleRequired": "脫敏規則不能為空",
+    "permissionTypes": {
+      "read": "可讀",
+      "write": "可寫",
+      "hidden": "隱藏",
+      "masked": "脫敏"
+    },
+    "maskRules": {
+      "phone": "手機號",
+      "email": "郵箱",
+      "id_card": "身份證",
+      "name": "姓名",
+      "default": "默認"
+    },
+    "permissionDesc": {
+      "read": "可以查看此字段",
+      "write": "可以查看和修改此字段",
+      "hidden": "完全不可見此字段",
+      "masked": "部分可見（脫敏顯示）"
+    }
   }
 }

@@ -1,0 +1,100 @@
+{
+  "title": "UI配置管理",
+  "name": "UI配置",
+  "styleConfig": "样式配置",
+  "configKey": "配置键",
+  "configKeyPlaceholder": "请输入配置键",
+  "configValue": "配置值",
+  "configValuePlaceholder": "请输入配置值(JSON格式)",
+  "configType": "配置类型",
+  "configTypePlaceholder": "请选择配置类型",
+  "description": "配置描述",
+  "descriptionPlaceholder": "请输入配置描述",
+  "status": "状态",
+  "sort": "排序",
+  "operation": "操作",
+  "edit": "编辑",
+  "keyFormatError": "配置键只能包含字母、数字、下划线和短横线",
+  "appConfig": "应用配置",
+  "themeConfig": "主题配置",
+  "logoConfig": "Logo配置",
+  "copyrightConfig": "版权配置",
+  "otherConfig": "其他配置",
+  "configList": "配置列表",
+  "configTypes": {
+    "preferences": "偏好设置",
+    "theme": "主题",
+    "logo": "Logo",
+    "copyright": "版权",
+    "other": "其他"
+  },
+  "jsonFormatError": "JSON格式错误",
+  "saveSuccess": "保存成功",
+  "saveError": "保存失败",
+  "loadSuccess": "加载成功",
+  "loadError": "加载失败",
+  "previewConfig": "预览配置",
+  "applyConfig": "应用配置",
+  "app": {
+    "title": "应用配置",
+    "name": "应用名称",
+    "namePlaceholder": "请输入应用名称",
+    "defaultHomePath": "默认首页路径",
+    "defaultHomePathPlaceholder": "请输入默认首页路径",
+    "locale": "默认语言",
+    "dynamicTitle": "动态标题",
+    "dynamicTitleTip": "开启后，页面标题会根据当前路由动态变化",
+    "watermark": "水印",
+    "watermarkTip": "开启后，页面会显示水印",
+    "watermarkContent": "水印内容",
+    "watermarkContentPlaceholder": "请输入水印内容",
+    "enablePreferences": "启用偏好设置",
+    "enablePreferencesTip": "开启后，用户可以在界面上修改偏好设置",
+    "layout": "布局模式",
+    "layoutOptions": {
+      "sidebar-nav": "侧边导航",
+      "header-nav": "顶部导航",
+      "mixed-nav": "混合导航",
+      "header-sidebar-nav": "顶部+侧边导航"
+    }
+  },
+  "theme": {
+    "mode": "主题模式",
+    "modeOptions": {
+      "light": "浅色",
+      "dark": "深色",
+      "auto": "跟随系统"
+    },
+    "colorPrimary": "主题色",
+    "radius": "圆角大小",
+    "builtinType": "内置主题",
+    "semiDarkSidebar": "深色侧边栏",
+    "semiDarkHeader": "深色顶栏"
+  },
+  "logo": {
+    "enable": "启用Logo",
+    "source": "Logo图片",
+    "sourcePlaceholder": "请输入Logo图片URL或上传",
+    "fit": "适应方式",
+    "fitOptions": {
+      "contain": "包含",
+      "cover": "覆盖",
+      "fill": "填充",
+      "none": "无",
+      "scale-down": "缩小"
+    }
+  },
+  "copyright": {
+    "enable": "启用版权",
+    "companyName": "公司名称",
+    "companyNamePlaceholder": "请输入公司名称",
+    "companySiteLink": "公司网站",
+    "companySiteLinkPlaceholder": "请输入公司网站链接",
+    "date": "版权年份",
+    "datePlaceholder": "请输入版权年份",
+    "icp": "ICP备案号",
+    "icpPlaceholder": "请输入ICP备案号",
+    "icpLink": "ICP链接",
+    "icpLinkPlaceholder": "请输入ICP链接"
+  }
+}

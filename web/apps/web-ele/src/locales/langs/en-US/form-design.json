@@ -77,6 +77,7 @@
       "codeGenerator": "Code Generator",
       "moneyInput": "Money Input",
       "formulaInput": "Formula Input",
+      "regionSelector": "Region Selector",
       "grid": "Grid Layout",
       "divider": "Divider",
       "collapse": "Collapse",
@@ -313,5 +314,22 @@
     "submit": "Submit",
     "success": "Validation passed, data printed in console",
     "error": "Validation failed"
+  },
+  "regionSelector": {
+    "selectProvince": "Select Province",
+    "selectCity": "Select Province/City",
+    "selectDistrict": "Select Province/City/District",
+    "apiUrlRequired": "API URL is required",
+    "loadFailed": "Failed to load region data",
+    "level": "Cascade Level",
+    "levelProvince": "Province",
+    "levelCity": "Province/City",
+    "levelDistrict": "Province/City/District",
+    "dataSource": "Data Source",
+    "static": "Static Data",
+    "api": "Dynamic API",
+    "apiUrl": "API URL",
+    "showAllLevels": "Show Full Path",
+    "separator": "Path Separator"
   }
 }

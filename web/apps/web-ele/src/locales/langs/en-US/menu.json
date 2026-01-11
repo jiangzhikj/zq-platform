@@ -46,5 +46,9 @@
   },
   "badge": "Badge Content",
   "badgeVariants": "Badge Variant",
-  "order": "Order"
+  "order": "Order",
+  "applicationId": "Application",
+  "applicationIdHelp": "Select the application that the menu belongs to, leave empty for main application menu",
+  "isSystem": "System Menu",
+  "isSystemHelp": "System menus are visible in all applications (main and sub-applications)"
 }

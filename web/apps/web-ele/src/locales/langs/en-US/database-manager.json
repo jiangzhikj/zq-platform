@@ -253,5 +253,29 @@
   "searchPlaceholder": "Search databases, tables, views...",
   "loadViewStructureFailed": "Failed to load view structure",
   "noData": "No data",
-  "noColumnInfo": "No column information"
+  "noColumnInfo": "No column information",
+  "dataTypes": {
+    "varchar": "Text",
+    "text": "Long Text",
+    "integer": "Integer",
+    "int": "Integer",
+    "numeric": "Exact Decimal",
+    "doublePrecision": "Decimal",
+    "double": "Decimal",
+    "float": "Decimal",
+    "json": "JSON",
+    "jsonb": "JSONB",
+    "date": "Date",
+    "time": "Time",
+    "datetime": "DateTime",
+    "timestamp": "Timestamp",
+    "datetime2": "Timestamp",
+    "boolean": "Boolean",
+    "bit": "Boolean",
+    "nvarchar": "Unicode Text",
+    "nvarcharMax": "JSON"
+  },
+  "fieldNameRequired": "Field name is required",
+  "fieldNameNoSpace": "Field name cannot contain spaces",
+  "fieldNameNoNumberStart": "Field name cannot start with a number"
 }

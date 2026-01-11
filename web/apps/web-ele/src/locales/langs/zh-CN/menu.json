@@ -46,5 +46,9 @@
   },
   "badge": "Badge 内容",
   "badgeVariants": "Badge 样式",
-  "order": "排序"
+  "order": "排序",
+  "applicationId": "所属应用",
+  "applicationIdHelp": "选择菜单所属的应用，留空表示主应用菜单",
+  "isSystem": "系统菜单",
+  "isSystemHelp": "系统菜单在所有应用（主应用和子应用）中都可见"
 }

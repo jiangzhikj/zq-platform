@@ -45,3 +45,7 @@ python manage.py loaddata db_init.json
 ```bash
 python manage.py runserver 0.0.0.0:8000
 ```
+
+
+## 数据导出
+ python manage.py dumpdata > db_init.json

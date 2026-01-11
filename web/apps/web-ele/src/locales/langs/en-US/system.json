@@ -1,17 +1,9 @@
 {
   "title": "System Management",
   "tool": "System Tool",
-  "role": {
-    "name": "Role",
-    "roleName": "Role Name",
-    "roleCode": "Role Code",
-    "status": "Status",
-    "remark": "Remark"
-  },
   "user": {
-    "userName": "User Name",
-    "account": "Account",
-    "email": "Email",
-    "operation": "Operation"
+    "selectPost": "Select Post",
+    "selectDept": "Select Department",
+    "allDept": "All Departments"
   }
 }

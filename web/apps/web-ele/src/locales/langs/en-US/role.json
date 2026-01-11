@@ -52,5 +52,70 @@
       "data": "Data Permission",
       "other": "Other Permission"
     }
+  },
+  "resourceScope": {
+    "title": "Data Permission",
+    "helpTip": "Only effective after backend implementation, refer to zq-demo",
+    "addResource": "Add Resource",
+    "saveConfig": "Save Configuration",
+    "deleteConfirm": "Are you sure to delete this configuration?",
+    "selectRole": "Please select a role first",
+    "noConfig": "No configuration, click [Add Resource] to start",
+    "resourceType": "Resource Type",
+    "selectResourceType": "Select Resource Type",
+    "dataPermission": "Data Permission Scope",
+    "selectDataPermission": "Select Data Permission",
+    "customDept": "Custom Department",
+    "selectDept": "Select Department",
+    "operation": "Operation",
+    "delete": "Delete",
+    "saveSuccess": "Resource data permission configuration saved successfully",
+    "saveFailed": "Failed to save resource data permission configuration",
+    "loadFailed": "Failed to load resource data permission configuration",
+    "loadResourceTypesFailed": "Failed to load resource types",
+    "loadDeptsFailed": "Failed to load department list",
+    "allTypesConfigured": "All resource types have been configured",
+    "customDeptRequired": "Custom data permission must select departments"
+  },
+  "fieldPermission": {
+    "title": "Field Permission",
+    "helpTip": "Only effective after backend implementation, refer to zq-demo",
+    "config": "Config",
+    "resourceType": "Resource Type",
+    "selectResourceType": "Select Resource Type",
+    "selectRoleFirst": "Please select a role first",
+    "selectRoleAndResource": "Please select a role and resource type first",
+    "fieldName": "Field Name",
+    "displayName": "Display Name",
+    "sensitive": "Sensitive",
+    "permissionType": "Permission Type",
+    "maskRule": "Mask Rule",
+    "description": "Description",
+    "noConfig": "No field configuration",
+    "saveConfig": "Save Configuration",
+    "saveSuccess": "Field permission configuration saved successfully",
+    "saveFailed": "Failed to save field permission configuration",
+    "loadFailed": "Failed to load field permission configuration",
+    "loadMetadataFailed": "Failed to load resource field metadata",
+    "maskRuleRequired": "Mask rule is required",
+    "permissionTypes": {
+      "read": "Read",
+      "write": "Write",
+      "hidden": "Hidden",
+      "masked": "Masked"
+    },
+    "maskRules": {
+      "phone": "Phone",
+      "email": "Email",
+      "id_card": "ID Card",
+      "name": "Name",
+      "default": "Default"
+    },
+    "permissionDesc": {
+      "read": "Can view this field",
+      "write": "Can view and modify this field",
+      "hidden": "Completely invisible",
+      "masked": "Partially visible (masked display)"
+    }
   }
 }

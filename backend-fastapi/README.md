@@ -107,6 +107,9 @@ alembic revision --autogenerate -m "init tables"
 
 # 执行迁移
 alembic upgrade head
+
+# 导入数据
+python scripts/loaddata.py db_init.json
 ```
 
 ### 5. 启动服务

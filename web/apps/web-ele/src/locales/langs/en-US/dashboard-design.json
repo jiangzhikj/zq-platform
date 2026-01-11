@@ -104,9 +104,10 @@
       "weather": "Weather",
       "imageCarousel": "Image Carousel",
       "dataTable": "Data Table",
-      "iframe": "iframe Embedding",
+      "iframe": "iframe Embed",
       "videoPlayer": "Video Player",
-      "image": "Image"
+      "image": "Image",
+      "formRender": "Form Render"
     },
     "defaultProps": {
       "statTitle": "Statistic Data",
@@ -164,7 +165,8 @@
       "externalPage": "External Page",
       "itemName": "Item",
       "imageTitle": "Image",
-      "myDashboard": "My Dashboard"
+      "myDashboard": "My Dashboard",
+      "formRender": "Form Data"
     }
   },
   "attribute": {
@@ -414,6 +416,7 @@
         "newItem": "New Member"
       },
       "quickLinks": {
+        "title": "Quick Links",
         "tip": "Click grid to select menu, icon automatically uses menu config",
         "iconColorDefault": "Default Theme Color",
         "selectMenu": "Select Menu"
@@ -487,6 +490,47 @@
         "stripe": "Stripe",
         "border": "Border",
         "showIndex": "Show Index",
+        "showHeader": "Show Header",
+        "highlightCurrentRow": "Highlight Current Row",
+        "alignment": "Alignment",
+        "headerAlign": "Header Align",
+        "cellAlign": "Cell Align",
+        "heightConfig": "Height Config",
+        "height": "Fixed Height",
+        "heightPlaceholder": "e.g. 300px or 100%",
+        "heightTip": "Supports pixels or percentage",
+        "maxHeight": "Max Height",
+        "maxHeightPlaceholder": "e.g. 500",
+        "maxHeightTip": "Shows scrollbar when exceeded",
+        "customization": "Customization",
+        "emptyText": "Empty Text",
+        "emptyTextPlaceholder": "No data",
+        "headerBgColor": "Header Background",
+        "summaryConfig": "Summary Config",
+        "showSummary": "Show Footer Summary",
+        "summaryType": "Summary Type",
+        "summaryTypes": {
+          "sum": "Sum",
+          "avg": "Average",
+          "count": "Count",
+          "max": "Maximum",
+          "min": "Minimum"
+        },
+        "summaryPrecision": "Decimal Places",
+        "summaryColumns": "Summary Columns",
+        "noColumnsConfigured": "Please configure table columns first",
+        "mergeConfig": "Merge Config",
+        "enableMerge": "Enable Merge",
+        "mergeRules": "Merge Rules",
+        "mergeTypes": {
+          "row": "Row Merge",
+          "column": "Column Merge"
+        },
+        "selectMergeField": "Select merge field",
+        "rowIndex": "Row Index",
+        "startCol": "Start Column",
+        "colspan": "Column Span",
+        "addMergeRule": "Add Merge Rule",
         "size": "Size",
         "sizeOptions": {
           "default": "Default",
@@ -517,6 +561,7 @@
         "selectFromFileLib": "From File Library"
       },
       "image": {
+        "title": "Image",
         "config": "Image Settings",
         "alt": "Alt Text",
         "altPlaceholder": "Alt text when image cannot be displayed",
@@ -542,11 +587,29 @@
       },
       "common": {
         "staticDataTip": "Current component uses static data, can be modified in Basic Config"
+      },
+      "formRender": {
+        "formConfig": "Form Config",
+        "formCode": "Select Form",
+        "formCodePlaceholder": "Please select a form",
+        "containerType": "Container Type",
+        "drawer": "Drawer",
+        "dialog": "Dialog",
+        "displayConfig": "Display Config",
+        "showToolbar": "Show Toolbar",
+        "showPagination": "Show Pagination",
+        "pageSize": "Page Size",
+        "buttonConfig": "Button Config",
+        "showAdd": "Add Button",
+        "showView": "View Button",
+        "showEdit": "Edit Button",
+        "showDelete": "Delete Button"
       }
     },
     "fieldLabels": {
       "title": "Title",
       "value": "Value",
+      "time": "Time",
       "trend": "Trend %",
       "trendLabel": "Trend Desc",
       "prefix": "Prefix",
@@ -633,7 +696,22 @@
         "success": "Success",
         "failed": "Failed",
         "processing": "Processing"
+      },
+      "summary": {
+        "sum": "Sum",
+        "avg": "Avg",
+        "count": "Count",
+        "max": "Max",
+        "min": "Min"
       }
+    },
+    "formRender": {
+      "placeholder": "Form Render Widget",
+      "noFormCode": "Please configure form code",
+      "deleteConfirm": "Are you sure to delete this data?",
+      "batchDeleteConfirm": "Are you sure to delete the selected {count} records?",
+      "importResult": "Successfully imported {success}, failed {failed}",
+      "view": "View"
     },
     "welcome": {
       "greeting": {

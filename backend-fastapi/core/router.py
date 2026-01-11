@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-@Author: 臧成龙
-@Contact: 939589097@qq.com
-@Time: 2025-12-31
-@File: router.py
-@Desc: Core模块统一路由入口
-"""
-"""
 Core模块统一路由入口
 """
 from fastapi import APIRouter
@@ -29,7 +22,9 @@ from core.redis_manager.api import router as redis_manager_router
 from core.database_manager.api import router as database_manager_router
 from core.message.api import router as message_router
 from core.message.api import announcement_router
+from core.page_manager.api import router as page_manager_router
 from core.login_log.api import router as login_log_router
+from core.data_source.api import router as data_source_router
 from core.oauth.api import router as oauth_router
 
 router = APIRouter()
@@ -52,5 +47,7 @@ router.include_router(redis_manager_router)
 router.include_router(database_manager_router)
 router.include_router(message_router)
 router.include_router(announcement_router)
+router.include_router(page_manager_router)
 router.include_router(login_log_router)
+router.include_router(data_source_router)
 router.include_router(oauth_router)

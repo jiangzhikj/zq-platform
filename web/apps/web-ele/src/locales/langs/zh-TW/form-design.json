@@ -77,6 +77,7 @@
       "codeGenerator": "編碼生成",
       "moneyInput": "金額輸入",
       "formulaInput": "公式計算",
+      "regionSelector": "省市區選擇",
       "grid": "柵格佈局",
       "divider": "分割線",
       "collapse": "折疊面板",
@@ -313,5 +314,22 @@
     "submit": "驗證提交",
     "success": "驗證通過，數據已打印在控制台",
     "error": "表單驗證失敗"
+  },
+  "regionSelector": {
+    "selectProvince": "請選擇省份",
+    "selectCity": "請選擇省/市",
+    "selectDistrict": "請選擇省/市/區",
+    "apiUrlRequired": "API 地址不能為空",
+    "loadFailed": "加載省市區數據失敗",
+    "level": "級聯層級",
+    "levelProvince": "省",
+    "levelCity": "省/市",
+    "levelDistrict": "省/市/區",
+    "dataSource": "數據來源",
+    "static": "靜態數據",
+    "api": "動態接口",
+    "apiUrl": "接口地址",
+    "showAllLevels": "顯示完整路徑",
+    "separator": "路徑分隔符"
   }
 }

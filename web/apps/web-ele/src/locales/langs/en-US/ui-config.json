@@ -1,0 +1,100 @@
+{
+  "title": "UI Config Management",
+  "name": "UI Config",
+  "styleConfig": "Style Config",
+  "configKey": "Config Key",
+  "configKeyPlaceholder": "Please enter config key",
+  "configValue": "Config Value",
+  "configValuePlaceholder": "Please enter config value (JSON format)",
+  "configType": "Config Type",
+  "configTypePlaceholder": "Please select config type",
+  "description": "Description",
+  "descriptionPlaceholder": "Please enter description",
+  "status": "Status",
+  "sort": "Sort",
+  "operation": "Operation",
+  "edit": "Edit",
+  "keyFormatError": "Config key can only contain letters, numbers, underscores and hyphens",
+  "appConfig": "App Config",
+  "themeConfig": "Theme Config",
+  "logoConfig": "Logo Config",
+  "copyrightConfig": "Copyright Config",
+  "otherConfig": "Other Config",
+  "configList": "Config List",
+  "configTypes": {
+    "preferences": "Preferences",
+    "theme": "Theme",
+    "logo": "Logo",
+    "copyright": "Copyright",
+    "other": "Other"
+  },
+  "jsonFormatError": "JSON format error",
+  "saveSuccess": "Save success",
+  "saveError": "Save failed",
+  "loadSuccess": "Load success",
+  "loadError": "Load failed",
+  "previewConfig": "Preview Config",
+  "applyConfig": "Apply Config",
+  "app": {
+    "title": "App Config",
+    "name": "App Name",
+    "namePlaceholder": "Please enter app name",
+    "defaultHomePath": "Default Home Path",
+    "defaultHomePathPlaceholder": "Please enter default home path",
+    "locale": "Default Language",
+    "dynamicTitle": "Dynamic Title",
+    "dynamicTitleTip": "When enabled, page title will change dynamically based on current route",
+    "watermark": "Watermark",
+    "watermarkTip": "When enabled, watermark will be displayed on the page",
+    "watermarkContent": "Watermark Content",
+    "watermarkContentPlaceholder": "Please enter watermark content",
+    "enablePreferences": "Enable Preferences",
+    "enablePreferencesTip": "When enabled, users can modify preferences in the interface",
+    "layout": "Layout Mode",
+    "layoutOptions": {
+      "sidebar-nav": "Sidebar Navigation",
+      "header-nav": "Header Navigation",
+      "mixed-nav": "Mixed Navigation",
+      "header-sidebar-nav": "Header + Sidebar Navigation"
+    }
+  },
+  "theme": {
+    "mode": "Theme Mode",
+    "modeOptions": {
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Follow System"
+    },
+    "colorPrimary": "Primary Color",
+    "radius": "Border Radius",
+    "builtinType": "Built-in Theme",
+    "semiDarkSidebar": "Semi Dark Sidebar",
+    "semiDarkHeader": "Semi Dark Header"
+  },
+  "logo": {
+    "enable": "Enable Logo",
+    "source": "Logo Image",
+    "sourcePlaceholder": "Please enter logo image URL or upload",
+    "fit": "Fit Mode",
+    "fitOptions": {
+      "contain": "Contain",
+      "cover": "Cover",
+      "fill": "Fill",
+      "none": "None",
+      "scale-down": "Scale Down"
+    }
+  },
+  "copyright": {
+    "enable": "Enable Copyright",
+    "companyName": "Company Name",
+    "companyNamePlaceholder": "Please enter company name",
+    "companySiteLink": "Company Website",
+    "companySiteLinkPlaceholder": "Please enter company website link",
+    "date": "Copyright Year",
+    "datePlaceholder": "Please enter copyright year",
+    "icp": "ICP License",
+    "icpPlaceholder": "Please enter ICP license number",
+    "icpLink": "ICP Link",
+    "icpLinkPlaceholder": "Please enter ICP link"
+  }
+}

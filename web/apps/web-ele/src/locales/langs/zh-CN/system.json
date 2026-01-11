@@ -1,17 +1,9 @@
 {
   "title": "系统管理",
   "tool": "系统工具",
-  "role": {
-    "name": "角色",
-    "roleName": "角色名称",
-    "roleCode": "角色编码",
-    "status": "状态",
-    "remark": "备注"
-  },
   "user": {
-    "userName": "用户名",
-    "account": "账号",
-    "email": "邮箱",
-    "operation": "操作"
+    "selectPost": "选择岗位",
+    "selectDept": "选择部门",
+    "allDept": "全部部门"
   }
 }

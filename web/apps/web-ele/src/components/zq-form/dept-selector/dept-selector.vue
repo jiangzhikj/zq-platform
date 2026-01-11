@@ -532,7 +532,7 @@ defineExpose({
       v-model="modalVisible"
       :title="$t('system.user.selectDept') || 'Select Departments'"
       width="45%"
-      :show-footer="false"
+      :show-footer="true"
       :show-fullscreen-button="false"
       @opened="handleModalOpened"
     >

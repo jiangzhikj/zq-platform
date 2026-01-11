@@ -258,5 +258,29 @@
   "searchPlaceholder": "搜索數據庫、表、視圖...",
   "loadViewStructureFailed": "加載視圖結構失敗",
   "noData": "暫無數據",
-  "noColumnInfo": "暫無列信息"
+  "noColumnInfo": "暫無列信息",
+  "dataTypes": {
+    "varchar": "文本",
+    "text": "長文本",
+    "integer": "整數",
+    "int": "整數",
+    "numeric": "精確小數",
+    "doublePrecision": "小數",
+    "double": "小數",
+    "float": "小數",
+    "json": "JSON",
+    "jsonb": "JSONB",
+    "date": "日期",
+    "time": "時間",
+    "datetime": "日期時間",
+    "timestamp": "時間戳",
+    "datetime2": "時間戳",
+    "boolean": "布爾",
+    "bit": "布爾",
+    "nvarchar": "Unicode文本",
+    "nvarcharMax": "JSON"
+  },
+  "fieldNameRequired": "字段名不能為空",
+  "fieldNameNoSpace": "字段名不能包含空格",
+  "fieldNameNoNumberStart": "字段名不能以數字開頭"
 }

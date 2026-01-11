@@ -51,6 +51,72 @@
       "api": "API权限",
       "data": "数据权限",
       "other": "其他权限"
+    },
+    "helpTip": "必须后端实现了相关的方法后才生效，参考 zq-demo"
+  },
+  "resourceScope": {
+    "title": "数据权限配置",
+    "helpTip": "必须后端实现了相关的方法后才生效，参考 zq-demo",
+    "addResource": "添加资源",
+    "saveConfig": "保存配置",
+    "deleteConfirm": "确定删除此配置吗？",
+    "selectRole": "请先选择角色",
+    "noConfig": "暂无配置，点击【添加资源】开始配置",
+    "resourceType": "资源类型",
+    "selectResourceType": "选择资源类型",
+    "dataPermission": "数据权限范围",
+    "selectDataPermission": "选择数据权限",
+    "customDept": "自定义部门",
+    "selectDept": "选择部门",
+    "operation": "操作",
+    "delete": "删除",
+    "saveSuccess": "资源数据权限配置保存成功",
+    "saveFailed": "保存资源数据权限配置失败",
+    "loadFailed": "加载资源数据权限配置失败",
+    "loadResourceTypesFailed": "加载资源类型失败",
+    "loadDeptsFailed": "加载部门列表失败",
+    "allTypesConfigured": "所有资源类型都已配置",
+    "customDeptRequired": "自定义数据权限必须选择部门"
+  },
+  "fieldPermission": {
+    "title": "字段权限配置",
+    "helpTip": "必须后端实现了相关的方法后才生效，参考 zq-demo",
+    "config": "配置",
+    "resourceType": "资源类型",
+    "selectResourceType": "选择资源类型",
+    "selectRoleFirst": "请先选择角色",
+    "selectRoleAndResource": "请先选择角色和资源类型",
+    "fieldName": "字段名",
+    "displayName": "显示名称",
+    "sensitive": "敏感",
+    "permissionType": "权限类型",
+    "maskRule": "脱敏规则",
+    "description": "说明",
+    "noConfig": "暂无字段配置",
+    "saveConfig": "保存配置",
+    "saveSuccess": "字段权限配置保存成功",
+    "saveFailed": "保存字段权限配置失败",
+    "loadFailed": "加载字段权限配置失败",
+    "loadMetadataFailed": "加载资源字段元数据失败",
+    "maskRuleRequired": "脱敏规则不能为空",
+    "permissionTypes": {
+      "read": "可读",
+      "write": "可写",
+      "hidden": "隐藏",
+      "masked": "脱敏"
+    },
+    "maskRules": {
+      "phone": "手机号",
+      "email": "邮箱",
+      "id_card": "身份证",
+      "name": "姓名",
+      "default": "默认"
+    },
+    "permissionDesc": {
+      "read": "可以查看此字段",
+      "write": "可以查看和修改此字段",
+      "hidden": "完全不可见此字段",
+      "masked": "部分可见（脱敏显示）"
     }
   }
 }

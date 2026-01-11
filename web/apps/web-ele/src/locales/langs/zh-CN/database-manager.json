@@ -255,5 +255,29 @@
   "searchPlaceholder": "搜索数据库、表、视图...",
   "loadViewStructureFailed": "加载视图结构失败",
   "noData": "暂无数据",
-  "noColumnInfo": "暂无列信息"
+  "noColumnInfo": "暂无列信息",
+  "dataTypes": {
+    "varchar": "文本",
+    "text": "长文本",
+    "integer": "整数",
+    "int": "整数",
+    "numeric": "精确小数",
+    "doublePrecision": "小数",
+    "double": "小数",
+    "float": "小数",
+    "json": "JSON",
+    "jsonb": "JSONB",
+    "date": "日期",
+    "time": "时间",
+    "datetime": "日期时间",
+    "timestamp": "时间戳",
+    "datetime2": "时间戳",
+    "boolean": "布尔",
+    "bit": "布尔",
+    "nvarchar": "Unicode文本",
+    "nvarcharMax": "JSON"
+  },
+  "fieldNameRequired": "字段名不能为空",
+  "fieldNameNoSpace": "字段名不能包含空格",
+  "fieldNameNoNumberStart": "字段名不能以数字开头"
 }

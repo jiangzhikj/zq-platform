@@ -1,0 +1,100 @@
+{
+  "title": "UI配置管理",
+  "name": "UI配置",
+  "styleConfig": "樣式配置",
+  "configKey": "配置鍵",
+  "configKeyPlaceholder": "請輸入配置鍵",
+  "configValue": "配置值",
+  "configValuePlaceholder": "請輸入配置值(JSON格式)",
+  "configType": "配置類型",
+  "configTypePlaceholder": "請選擇配置類型",
+  "description": "配置描述",
+  "descriptionPlaceholder": "請輸入配置描述",
+  "status": "狀態",
+  "sort": "排序",
+  "operation": "操作",
+  "edit": "編輯",
+  "keyFormatError": "配置鍵只能包含字母、數字、下劃線和短橫線",
+  "appConfig": "應用配置",
+  "themeConfig": "主題配置",
+  "logoConfig": "Logo配置",
+  "copyrightConfig": "版權配置",
+  "otherConfig": "其他配置",
+  "configList": "配置列表",
+  "configTypes": {
+    "preferences": "偏好設置",
+    "theme": "主題",
+    "logo": "Logo",
+    "copyright": "版權",
+    "other": "其他"
+  },
+  "jsonFormatError": "JSON格式錯誤",
+  "saveSuccess": "保存成功",
+  "saveError": "保存失敗",
+  "loadSuccess": "加載成功",
+  "loadError": "加載失敗",
+  "previewConfig": "預覽配置",
+  "applyConfig": "應用配置",
+  "app": {
+    "title": "應用配置",
+    "name": "應用名稱",
+    "namePlaceholder": "請輸入應用名稱",
+    "defaultHomePath": "默認首頁路徑",
+    "defaultHomePathPlaceholder": "請輸入默認首頁路徑",
+    "locale": "默認語言",
+    "dynamicTitle": "動態標題",
+    "dynamicTitleTip": "開啟後，頁面標題會根據當前路由動態變化",
+    "watermark": "水印",
+    "watermarkTip": "開啟後，頁面會顯示水印",
+    "watermarkContent": "水印內容",
+    "watermarkContentPlaceholder": "請輸入水印內容",
+    "enablePreferences": "啟用偏好設置",
+    "enablePreferencesTip": "開啟後，用戶可以在界面上修改偏好設置",
+    "layout": "佈局模式",
+    "layoutOptions": {
+      "sidebar-nav": "側邊導航",
+      "header-nav": "頂部導航",
+      "mixed-nav": "混合導航",
+      "header-sidebar-nav": "頂部+側邊導航"
+    }
+  },
+  "theme": {
+    "mode": "主題模式",
+    "modeOptions": {
+      "light": "淺色",
+      "dark": "深色",
+      "auto": "跟隨系統"
+    },
+    "colorPrimary": "主題色",
+    "radius": "圓角大小",
+    "builtinType": "內置主題",
+    "semiDarkSidebar": "深色側邊欄",
+    "semiDarkHeader": "深色頂欄"
+  },
+  "logo": {
+    "enable": "啟用Logo",
+    "source": "Logo圖片",
+    "sourcePlaceholder": "請輸入Logo圖片URL或上傳",
+    "fit": "適應方式",
+    "fitOptions": {
+      "contain": "包含",
+      "cover": "覆蓋",
+      "fill": "填充",
+      "none": "無",
+      "scale-down": "縮小"
+    }
+  },
+  "copyright": {
+    "enable": "啟用版權",
+    "companyName": "公司名稱",
+    "companyNamePlaceholder": "請輸入公司名稱",
+    "companySiteLink": "公司網站",
+    "companySiteLinkPlaceholder": "請輸入公司網站鏈接",
+    "date": "版權年份",
+    "datePlaceholder": "請輸入版權年份",
+    "icp": "ICP備案號",
+    "icpPlaceholder": "請輸入ICP備案號",
+    "icpLink": "ICP鏈接",
+    "icpLinkPlaceholder": "請輸入ICP鏈接"
+  }
+}

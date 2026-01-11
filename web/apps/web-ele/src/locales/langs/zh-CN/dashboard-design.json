@@ -67,6 +67,15 @@
     "sat": "周六",
     "sun": "周日"
   },
+  "location": {
+    "east": "华东",
+    "south": "华南",
+    "north": "华北",
+    "central": "华中",
+    "southwest": "西南",
+    "northwest": "西北",
+    "northeast": "东北"
+  },
   "material": {
     "title": "组件库",
     "search": "搜索组件...",
@@ -76,6 +85,97 @@
       "map": "地图",
       "media": "多媒体",
       "other": "其他"
+    },
+    "widgets": {
+      "statCard": "统计卡片",
+      "progressCard": "进度卡片",
+      "chartLine": "折线图",
+      "chartBar": "柱状图",
+      "chartPie": "饼图",
+      "chartGauge": "仪表盘",
+      "chartArea": "面积图",
+      "chartRadar": "雷达图",
+      "chartFunnel": "漏斗图",
+      "chartScatter": "散点图",
+      "chartRing": "环形进度",
+      "chartHeatmap": "热力图",
+      "chartKline": "K线图",
+      "chartSankey": "桑基图",
+      "todoList": "待办列表",
+      "noticeList": "通知列表",
+      "announcementList": "公告列表",
+      "rankingList": "排行榜",
+      "quickLinks": "快捷入口",
+      "welcomeCard": "欢迎卡片",
+      "calendar": "日历",
+      "countdown": "倒计时",
+      "clock": "时钟",
+      "weather": "天气",
+      "imageCarousel": "图片轮播",
+      "dataTable": "数据表格",
+      "iframe": "iframe 嵌入",
+      "videoPlayer": "视频播放器",
+      "image": "图片",
+      "formRender": "表单渲染"
+    },
+    "defaultProps": {
+      "statTitle": "统计数据",
+      "trendLabel": "较昨日",
+      "progressTitle": "完成进度",
+      "visitTrend": "访问趋势",
+      "visits": "访问量",
+      "downloads": "下载量",
+      "salesStat": "销售统计",
+      "trafficSource": "流量来源",
+      "searchEngine": "搜索引擎",
+      "directAccess": "直接访问",
+      "emailMarketing": "邮件营销",
+      "unionAds": "联盟广告",
+      "videoAds": "视频广告",
+      "sysLoad": "系统负载",
+      "abilityEval": "能力评估",
+      "sales": "销售",
+      "mgmt": "管理",
+      "tech": "技术",
+      "cs": "客服",
+      "rd": "研发",
+      "mkt": "市场",
+      "budget": "预算",
+      "actual": "实际",
+      "convFunnel": "转化漏斗",
+      "visit": "访问",
+      "consult": "咨询",
+      "intent": "意向",
+      "order": "下单",
+      "deal": "成交",
+      "dataDist": "数据分布",
+      "height": "身高 (cm)",
+      "weight": "体重 (kg)",
+      "male": "男性",
+      "female": "女性",
+      "kpiDone": "KPI完成度",
+      "salesVolume": "销售额",
+      "orderVolume": "订单量",
+      "customerCount": "客户数",
+      "weekVisitHeat": "周访问热力",
+      "stockTrend": "股价走势",
+      "todoTitle": "待办事项",
+      "todoItem1": "完成项目报告",
+      "todoItem2": "团队周会",
+      "todoItem3": "代码审查",
+      "latestNotice": "最新通知",
+      "latestAnnouncement": "最新公告",
+      "salesRanking": "销售排行",
+      "welcomeTitle": "欢迎回来",
+      "welcomeSubtitle": "今天是个好日子",
+      "countdownTitle": "活动倒计时",
+      "todayWeather": "今日天气",
+      "dataList": "数据列表",
+      "externalPage": "外部页面",
+      "itemName": "项目",
+      "imageTitle": "图片",
+      "myDashboard": "我的仪表盘",
+      "formRender": "表单数据"
     }
   },
   "attribute": {
@@ -325,6 +425,7 @@
         "newItem": "新成员"
       },
       "quickLinks": {
+        "title": "快捷入口",
         "tip": "点击格子选择菜单，图标自动使用菜单配置",
         "iconColorDefault": "默认主题色",
         "selectMenu": "选择菜单"
@@ -339,7 +440,11 @@
         "targetTime": "目标时间",
         "targetTimePlaceholder": "选择目标时间",
         "showDays": "显示天数",
-        "showHours": "显示小时"
+        "showHours": "显示小时",
+        "finishedTextPlaceholder": "已结束"
+      },
+      "clock": {
+        "timezone": "时区"
       },
       "iframe": {
         "config": "显示设置",
@@ -359,6 +464,7 @@
         "selectFromFileLib": "从文件库选择"
       },
       "image": {
+        "title": "图片",
         "config": "图片设置",
         "alt": "替代文本",
         "altPlaceholder": "图片无法显示时的替代文本",
@@ -384,11 +490,86 @@
       },
       "common": {
         "staticDataTip": "当前组件使用静态数据，可在基础配置中修改"
+      },
+      "formRender": {
+        "formConfig": "表单配置",
+        "formCode": "选择表单",
+        "formCodePlaceholder": "请选择表单",
+        "containerType": "容器类型",
+        "drawer": "抽屉",
+        "dialog": "弹窗",
+        "displayConfig": "显示配置",
+        "showToolbar": "显示工具栏",
+        "showPagination": "显示分页",
+        "pageSize": "每页条数",
+        "buttonConfig": "按钮配置",
+        "showAdd": "新增按钮",
+        "showView": "查看按钮",
+        "showEdit": "编辑按钮",
+        "showDelete": "删除按钮"
+      },
+      "table": {
+        "config": "表格配置",
+        "stripe": "斑马纹",
+        "border": "边框",
+        "showIndex": "显示序号",
+        "showHeader": "显示表头",
+        "highlightCurrentRow": "高亮当前行",
+        "alignment": "对齐方式",
+        "headerAlign": "表头对齐",
+        "cellAlign": "单元格对齐",
+        "heightConfig": "高度配置",
+        "height": "固定高度",
+        "heightPlaceholder": "如：300px 或 100%",
+        "heightTip": "支持像素值或百分比",
+        "maxHeight": "最大高度",
+        "maxHeightPlaceholder": "如：500",
+        "maxHeightTip": "超出后显示滚动条",
+        "customization": "自定义",
+        "emptyText": "空数据提示",
+        "emptyTextPlaceholder": "暂无数据",
+        "headerBgColor": "表头背景色",
+        "summaryConfig": "统计配置",
+        "showSummary": "显示表尾统计",
+        "summaryType": "统计类型",
+        "summaryTypes": {
+          "sum": "合计",
+          "avg": "平均值",
+          "count": "计数",
+          "max": "最大值",
+          "min": "最小值"
+        },
+        "summaryPrecision": "小数位数",
+        "summaryColumns": "统计列",
+        "noColumnsConfigured": "请先配置表格列",
+        "mergeConfig": "合并配置",
+        "enableMerge": "启用合并",
+        "mergeRules": "合并规则",
+        "mergeTypes": {
+          "row": "行合并",
+          "column": "列合并"
+        },
+        "selectMergeField": "选择合并字段",
+        "rowIndex": "行号",
+        "startCol": "起始列",
+        "colspan": "合并列数",
+        "addMergeRule": "添加合并规则",
+        "columnConfig": "列配置",
+        "columnConfigJson": "JSON 格式列配置",
+        "tableData": "表格数据",
+        "tableDataJson": "JSON 格式表格数据",
+        "complexDataTip": "表格数据结构较复杂，建议使用 JSON 模式编辑",
+        "sizeOptions": {
+          "default": "默认",
+          "large": "大",
+          "small": "小"
+        }
       }
     },
     "fieldLabels": {
       "title": "标题",
       "value": "数值",
+      "time": "时间",
       "trend": "趋势百分比",
       "trendLabel": "趋势说明",
       "prefix": "前缀",
@@ -475,7 +656,22 @@
         "success": "成功",
         "failed": "失败",
         "processing": "进行中"
+      },
+      "summary": {
+        "sum": "合计",
+        "avg": "平均",
+        "count": "计数",
+        "max": "最大",
+        "min": "最小"
       }
+    },
+    "formRender": {
+      "placeholder": "表单渲染组件",
+      "noFormCode": "请配置表单编码",
+      "deleteConfirm": "确定要删除这条数据吗？",
+      "batchDeleteConfirm": "确定要删除选中的 {count} 条数据吗？",
+      "importResult": "成功导入 {success} 条，失败 {failed} 条",
+      "view": "查看"
     },
     "welcome": {
       "greeting": {

@@ -46,5 +46,9 @@
   },
   "badge": "Badge 內容",
   "badgeVariants": "Badge 樣式",
-  "order": "排序"
+  "order": "排序",
+  "applicationId": "所屬應用",
+  "applicationIdHelp": "選擇菜單所屬的應用，留空表示主應用菜單",
+  "isSystem": "系統菜單",
+  "isSystemHelp": "系統菜單在所有應用（主應用和子應用）中都可見"
 }
