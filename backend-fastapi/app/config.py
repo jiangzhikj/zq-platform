@@ -80,35 +80,35 @@ class Settings(BaseSettings):
     # Gitee OAuth
     GITEE_CLIENT_ID: Optional[str] = None
     GITEE_CLIENT_SECRET: Optional[str] = None
-    GITEE_REDIRECT_URI: Optional[str] = None
+    GITEE_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/gitee/callback'
     # GitHub OAuth
     GITHUB_CLIENT_ID: Optional[str] = None
     GITHUB_CLIENT_SECRET: Optional[str] = None
-    GITHUB_REDIRECT_URI: Optional[str] = None
+    GITHUB_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/github/callback'
     # QQ OAuth
     QQ_APP_ID: Optional[str] = None
     QQ_APP_KEY: Optional[str] = None
-    QQ_REDIRECT_URI: Optional[str] = None
+    QQ_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/qq/callback'
     # Google OAuth
     GOOGLE_CLIENT_ID: Optional[str] = None
     GOOGLE_CLIENT_SECRET: Optional[str] = None
-    GOOGLE_REDIRECT_URI: Optional[str] = None
+    GOOGLE_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/google/callback'
     # 微信 OAuth
     WECHAT_APP_ID: Optional[str] = None
     WECHAT_APP_SECRET: Optional[str] = None
-    WECHAT_REDIRECT_URI: Optional[str] = None
+    WECHAT_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/wechat/callback'
     # Microsoft OAuth
     MICROSOFT_CLIENT_ID: Optional[str] = None
     MICROSOFT_CLIENT_SECRET: Optional[str] = None
-    MICROSOFT_REDIRECT_URI: Optional[str] = None
+    MICROSOFT_REDIRECT_URI: Optional[str] = 'https://fastapi.zq-platform.cn/oauth/microsoft/callback'
     # 钉钉 OAuth
     DINGTALK_APP_ID: Optional[str] = None
     DINGTALK_APP_SECRET: Optional[str] = None
-    DINGTALK_REDIRECT_URI: Optional[str] = None
+    DINGTALK_REDIRECT_URI: Optional[str] = 'https://localhost:5777/oauth/dingtalk/callback'
     # 飞书 OAuth
     FEISHU_APP_ID: Optional[str] = None
     FEISHU_APP_SECRET: Optional[str] = None
-    FEISHU_REDIRECT_URI: Optional[str] = None
+    FEISHU_REDIRECT_URI: Optional[str] = 'https://localhost:5777/oauth/feishu/callback'
     
     model_config = SettingsConfigDict(
         env_file=f"env/{os.getenv('ENV', 'dev')}.env",

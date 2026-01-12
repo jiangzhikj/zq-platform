@@ -54,33 +54,33 @@ GRANT_ADMIN_TO_OAUTH_USER = False
 GITEE_CLIENT_ID = os.environ.get('GITEE_CLIENT_ID', 'your-gitee-client-id')
 GITEE_CLIENT_SECRET = os.environ.get('GITEE_CLIENT_SECRET', 'your-gitee-client-secret')
 # 注意：前端端口是 5777，回调路径是 /oauth/gitee/callback
-GITEE_REDIRECT_URI = os.environ.get('GITEE_REDIRECT_URI', 'https://pro-ninja.zq-platform.cn/oauth/gitee/callback')
+GITEE_REDIRECT_URI = os.environ.get('GITEE_REDIRECT_URI', 'https://django-ninja.zq-platform.cn/oauth/gitee/callback')
 
 # GitHub OAuth
 GITHUB_CLIENT_ID = os.environ.get('GITHUB_CLIENT_ID', 'your-github-client-id')
 GITHUB_CLIENT_SECRET = os.environ.get('GITHUB_CLIENT_SECRET', 'your-github-client-secret')
-GITHUB_REDIRECT_URI = os.environ.get('GITHUB_REDIRECT_URI', 'https://pro-ninja.zq-platform.cn/oauth/github/callback')
+GITHUB_REDIRECT_URI = os.environ.get('GITHUB_REDIRECT_URI', 'https://django-ninja.zq-platform.cn/oauth/github/callback')
 
 # QQ 互联 OAuth
 QQ_APP_ID = os.environ.get('QQ_APP_ID', 'your-qq-app-id')
 QQ_APP_KEY = os.environ.get('QQ_APP_KEY', 'your-qq-app-key')
-QQ_REDIRECT_URI = os.environ.get('QQ_REDIRECT_URI', 'https://pro-ninja.zq-platform.cn/oauth/qq/callback')
+QQ_REDIRECT_URI = os.environ.get('QQ_REDIRECT_URI', 'https://django-ninja.zq-platform.cn/oauth/qq/callback')
 
 # Google OAuth
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID', 'your-google-client-id')
 GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET', 'your-google-client-secret')
-GOOGLE_REDIRECT_URI = os.environ.get('GOOGLE_REDIRECT_URI', 'https://pro-ninja.zq-platform.cn/oauth/google/callback')
+GOOGLE_REDIRECT_URI = os.environ.get('GOOGLE_REDIRECT_URI', 'https://django-ninja.zq-platform.cn/oauth/google/callback')
 
 # 微信开放平台 OAuth
 WECHAT_APP_ID = os.environ.get('WECHAT_APP_ID', 'your-wechat-app-id')
 WECHAT_APP_SECRET = os.environ.get('WECHAT_APP_SECRET', 'your-wechat-app-secret')
-WECHAT_REDIRECT_URI = os.environ.get('WECHAT_REDIRECT_URI', 'https://pro-ninja.zq-platform.cn/oauth/wechat/callback')
+WECHAT_REDIRECT_URI = os.environ.get('WECHAT_REDIRECT_URI', 'https://django-ninja.zq-platform.cn/oauth/wechat/callback')
 
 # Microsoft OAuth
 MICROSOFT_CLIENT_ID = os.environ.get('MICROSOFT_CLIENT_ID', 'your-microsoft-client-id')
 MICROSOFT_CLIENT_SECRET = os.environ.get('MICROSOFT_CLIENT_SECRET', 'your-microsoft-client-secret')
 MICROSOFT_REDIRECT_URI = os.environ.get('MICROSOFT_REDIRECT_URI',
-                                        'https://pro-ninja.zq-platform.cn/oauth/microsoft/callback')
+                                        'https://django-ninja.zq-platform.cn/oauth/microsoft/callback')
 
 # 钉钉 OAuth
 DINGTALK_APP_ID = os.environ.get('DINGTALK_APP_ID', 'your-dingtalk-app-id')
