@@ -14,12 +14,14 @@
 </div>
 
 ## 演示链接
+### 探索无敌版本
+[https://explorer.zq-platform.cn](https://explorer.zq-platform.cn/)
 ### Django
 [https://django-ninja.zq-platform.cn](https://django-ninja.zq-platform.cn/)
 ### FastAPI
 [https://fastapi.zq-platform.cn](https://fastapi.zq-platform.cn/)
 
-## 📞 联系方式
+## 📞 联系合作方式
 
 如有问题或建议，请通过以下方式联系：
 
@@ -53,7 +55,6 @@ zq-platform 是一个功能完善的企业级后台管理系统解决方案，�
 - **核心框架**: Django 5.2.7
 - **API 框架**: Django Ninja 1.4.5 (高性能 API 框架)
 - **认证**: PyJWT 2.8.0
-- **异步任务**: Celery 5.4.0 + Django Celery Beat
 - **任务调度**: APScheduler 3.10.4
 - **缓存**: Redis + django-redis
 - **WebSocket**: Django Channels 4.2
@@ -148,7 +149,7 @@ zq-platform/
 
 - **后端**
   - Python >= 3.10
-  - MySQL >= 5.7 / PostgreSQL >= 12 / SQL Server / SQLite
+  - MySQL >= 5.7 / PostgreSQL >= 12 / SQL Server
   - Redis >= 5.0
 
 - **前端**

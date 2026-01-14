@@ -14,12 +14,12 @@ A modern enterprise-level admin management system with dual backend options (Dja
 </div>
 
 ## Demo Link
+### Explorer Version
+[https://explorer.zq-platform.cn](https://explorer.zq-platform.cn/)
 ### Django
 [https://django-ninja.zq-platform.cn](https://django-ninja.zq-platform.cn/)
 ### FastAPI
 [https://fastapi.zq-platform.cn](https://fastapi.zq-platform.cn/)
-### Explorer Version (Under Development...)
-[https://explorer.zq-platform.cn](https://explorer.zq-platform.cn/)
 
 ## 📞 Contact & Cooperation
 
