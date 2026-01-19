@@ -111,7 +111,7 @@ class MessageService:
         return True
 
     @staticmethod
-    async def mark_all_as_read(db: AsyncSession, user_id: str, msg_type: str = None) -> int:
+    async def mark_all_as_read(db: AsyncSession, user_id: str, msg_type: str | None = None) -> int:
         """标记所有消息为已读"""
         conditions = [
             Message.recipient_id == user_id,

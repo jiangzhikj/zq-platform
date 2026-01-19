@@ -12,7 +12,7 @@
 """
 from typing import List, Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Body
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
@@ -78,7 +78,7 @@ async def get_unread_count(
 @router.post("/read-all", response_model=ResponseModel, summary="全部已读")
 async def mark_all_as_read(
         request: Request,
-        data: MarkReadInput = None,
+        data: Optional[MarkReadInput] = Body(None),
         db: AsyncSession = Depends(get_db),
 ):
     """标记所有消息为已读"""
