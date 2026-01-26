@@ -97,7 +97,8 @@ async def load_data(file_path: str):
                 
                 # 转换日期时间字段
                 for key, value in fields.items():
-                    if isinstance(value, str) and 'datetime' in key.lower():
+                    if (isinstance(value, str) and 'datetime' in key.lower()) \
+                        or (model_name == "core.user.model.User" and key in ("birthday", "last_login")):
                         fields[key] = parse_datetime(value)
                 
                 # 创建实例
@@ -106,23 +107,20 @@ async def load_data(file_path: str):
                 
                 success_count += 1
                 
-                # 每 100 条提交一次
-                if success_count % 100 == 0:
-                    await session.commit()
-                    print(f"已导入 {success_count} 条记录...")
-                
             except Exception as e:
                 print(f"错误: 导入记录失败 - {e}")
                 print(f"  模型: {item.get('model')}")
                 print(f"  数据: {item.get('fields')}")
                 error_count += 1
-                await session.rollback()
         
         # 提交剩余的数据
         try:
             await session.commit()
+            print(f"已导入 {success_count} 条记录...")
         except Exception as e:
             print(f"提交失败: {e}")
+            error_count += success_count
+            success_count = 0
             await session.rollback()
     
     print(f"\n导入完成:")
