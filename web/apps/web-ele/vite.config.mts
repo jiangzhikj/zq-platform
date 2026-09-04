@@ -2,10 +2,18 @@ import { defineConfig } from '@vben/vite-config';
 
 import ElementPlus from 'unplugin-element-plus/vite';
 
-export default defineConfig(async () => {
+import { getElementPlusOptimizeDeps } from './build/element-plus-optimize-deps';
+
+export default defineConfig(async ({ command }) => {
+  const isDev = command === 'serve';
+
   return {
     application: {},
     vite: {
+      optimizeDeps: {
+        holdUntilCrawlEnd: true,
+        include: getElementPlusOptimizeDeps(),
+      },
       resolve: {
         dedupe: [
           '@tiptap/core',
@@ -27,6 +35,8 @@ export default defineConfig(async () => {
       plugins: [
         ElementPlus({
           format: 'esm',
+          // 开发环境使用全量样式，避免按需 CSS 触发 Vite 反复预构建与 reloading
+          importStyle: isDev ? false : 'css',
         }),
       ],
       server: {

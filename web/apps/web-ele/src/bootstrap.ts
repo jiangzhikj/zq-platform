@@ -20,6 +20,11 @@ import { setupZqTable } from './components/zq-table';
 import { router } from './router';
 
 async function bootstrap(namespace: string) {
+  // 开发环境全量引入 Element Plus 样式，避免按需 CSS 导致 Vite 反复 reloading
+  if (import.meta.env.DEV) {
+    await import('element-plus/dist/index.css');
+  }
+
   // 初始化组件适配器
   await initComponentAdapter();
 

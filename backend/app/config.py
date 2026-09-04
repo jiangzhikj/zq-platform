@@ -1,7 +1,8 @@
 import os
-from typing import Literal, Optional
+from typing import Any, Literal, Optional
+from urllib.parse import quote_plus
 
-from pydantic import model_validator
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -174,25 +175,51 @@ class Settings(BaseSettings):
         case_sensitive=True,
         extra="ignore",
     )
-    
+
+    @field_validator(
+        "APP_PORT",
+        "DB_PORT",
+        "REDIS_PORT",
+        "SMTP_PORT",
+        "QDRANT_PORT",
+        "QDRANT_GRPC_PORT",
+        mode="before",
+    )
+    @classmethod
+    def empty_int_uses_default(cls, value: Any, info) -> Any:
+        """env 文件中留空时回退到字段默认值，避免 '' 触发 int 校验失败"""
+        if value == "" or value is None:
+            field = cls.model_fields[info.field_name]
+            return field.default
+        return value
+
+    @staticmethod
+    def _build_db_auth(user: str, password: str) -> str:
+        """拼接数据库认证信息，支持空密码（本地 trust 认证常见场景）"""
+        user = quote_plus(user)
+        if password:
+            return f"{user}:{quote_plus(password)}"
+        return user
+
     @model_validator(mode="after")
     def build_urls(self) -> "Settings":
         """自动拼接DATABASE_URL和REDIS_URL"""
         if not self.DATABASE_URL:
+            auth = self._build_db_auth(self.DB_USER, self.DB_PASSWORD)
             if self.DB_TYPE == "mysql":
                 self.DATABASE_URL = (
-                    f"mysql+aiomysql://{self.DB_USER}:{self.DB_PASSWORD}"
+                    f"mysql+aiomysql://{auth}"
                     f"@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}?charset=utf8mb4"
                 )
             elif self.DB_TYPE == "sqlserver":
                 self.DATABASE_URL = (
-                    f"mssql+aioodbc://{self.DB_USER}:{self.DB_PASSWORD}"
+                    f"mssql+aioodbc://{auth}"
                     f"@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
                     f"?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
                 )
             else:
                 self.DATABASE_URL = (
-                    f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}"
+                    f"postgresql+asyncpg://{auth}"
                     f"@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
                 )
         if not self.REDIS_URL:

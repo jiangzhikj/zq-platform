@@ -208,6 +208,10 @@ cp env/example.env env/dev.env
 # 运行数据库迁移
 alembic upgrade head
 
+# 初始化数据
+python scripts/loaddata.py db_init.json
+
+
 # 启动开发服务器
 uvicorn main:app --reload --port 8000
 ```
