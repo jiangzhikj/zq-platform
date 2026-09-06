@@ -107,8 +107,8 @@ const formSchema = computed((): VbenFormSchema[] => {
     {
       component: 'VbenInput',
       componentProps: {
-        // placeholder: $t('authentication.usernameTip'),
-        placeholder: $t('authentication.loginSubtitle'),
+        placeholder: $t('authentication.usernameTip'),
+        // placeholder: $t('authentication.loginSubtitle'),
       },
       // dependencies: {
       //   trigger(values, form) {
@@ -134,8 +134,8 @@ const formSchema = computed((): VbenFormSchema[] => {
     {
       component: 'VbenInputPassword',
       componentProps: {
-        // placeholder: $t('authentication.password'),
-        placeholder: $t('authentication.loginSubtitle'),
+        placeholder: $t('authentication.password'),
+        // placeholder: $t('authentication.loginSubtitle'),
       },
       defaultValue: '',
       fieldName: 'password',

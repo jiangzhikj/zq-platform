@@ -50,6 +50,8 @@ backend/env/prod.env
 
 # Distribution / build
 build/
+!web/apps/web-ele/build/
+!web/apps/web-ele/build/**
 develop-eggs/
 dist/
 downloads/

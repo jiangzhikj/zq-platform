@@ -230,6 +230,10 @@ pnpm dev
 
 访问 <http://localhost:5777> 即可进入系统。
 
+### 默认账号密码
+**账号：zhangwei**
+**密码：123456**
+
 ### 🐳 Docker Compose 一键部署
 
 项目提供了完整的 Docker Compose 部署方案，位于 `docker/` 目录下，可一键启动 PostgreSQL、Redis、后端和前端服务。
